@@ -98,10 +98,13 @@
   }
   .HomeBackground{
     background-image: url(/kepek/background.jpg);
-    padding: 400px;
+    padding-bottom: 100vh;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+  }
+  @media (max-width: 900px){
+
   }
 .MusicButton{
   position: fixed;
