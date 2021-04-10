@@ -65,6 +65,10 @@
     }
   }
   @media (max-width: 900px){
+    nav{
+      height: 80px;
+      width: 100%;
+    }
     .checkbtn{
       display: block;
     }
@@ -98,13 +102,11 @@
   }
   .HomeBackground{
     background-image: url(/kepek/background.jpg);
-    padding-bottom: 100vh;
-    background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-  }
-  @media (max-width: 900px){
-
+    background-attachment: fixed;
+    background-position:center;
+    padding-bottom: 100vh;
   }
 .MusicButton{
   position: fixed;
