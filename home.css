@@ -9,95 +9,131 @@
     font-family: 'Kiwi Maru', serif;
     background-color: #000000;
   }
-  nav{
-    height: 80px;
+  header{
+    text-align: center;
+    position: fixed;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    height: 50px;
+    background: black;
   }
-  label.logo{
-    color: white;
-    font-size: 40px;
-    line-height: 80px;
-    padding: 0 80px 0 100px;
-    font-weight: bold;
+  nav{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.950);
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
   }
   nav ul{
-    margin-right: 0px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
-  nav ul li{
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
+  nav li{
+    margin-bottom: 1em;
   }
-  nav ul li a{
+  nav a{
     transition: all 0.3s ease 0s;
     color: white;
-    font-size: 25px;
+    font-size: 1.2rem;
     padding: 6px 13px;
     border-radius: 2px;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
   }
-  a:hover, .active{
+  nav a:hover {
     background: rgb(255, 255, 255);
     color: black;
     border-radius: 100px;
     box-shadow: 0 0 2px 0 white;
   }
-  .checkbtn{
-    font-size: 30px;
+  .nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .nav-toggle-label {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  span{
     color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 31px;
-    cursor: pointer;
-    display: none;
   }
-  #check{
-    display: none;
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
   }
-  @media (max-width: 1000px){
-    label.logo{
-      font-size: 30px;
-      padding-left: 20px;
-    }
-    nav ul li a{
-      font-size: 25px;
-    }
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
   }
-  @media (max-width: 900px){
-    nav{
-      height: 80px;
-      width: 100%;
+  .nav-toggle-label span::before {
+    bottom: 7px;
+  }
+  .nav-toggle-label span::after {
+    top: 7px;
+  }
+  .nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+  @media screen and (min-width: 800px) {
+    .nav-toggle-label {
+      display: none;
     }
-    .checkbtn{
-      display: block;
-    }
-    ul{
-      position: absolute;
-      width: 100%;
-      height: 250px;
-      background: rgba(0, 0, 0, 0.932);
-      top: 80px;
-      left: -100%;
-      text-align: center;
-      transition: all .5s;
-    }
-    nav ul li{
-      display: block;
-      margin: 15px 0;
-      line-height: 30px;
+    nav a{
+      transition: all 0.3s ease 0s;
       color: white;
+      font-size: 1.4rem;
+      padding: 6px 13px;
+      border-radius: 2px;
+      opacity: 0;
+      transition: opacity 150ms ease-in-out;
     }
-    nav ul li a{
-      font-size: 25px;
-      padding: 0 20%;
+    header {
+      display: grid;
+      height: 70px;
+      width: 100%;
     }
-    a:hover{
-      background: white;
-      color: black;
+    nav a {
+      opacity: 1;
     }
-    #check:checked ~ ul{
-      left: 0;
+    nav{
+      width: 100%;
+      all: unset;
+      align-items: center;
+      justify-content: center;
+    }
+    nav ul {
+      display: flex;
+      position: absolute;
+      justify-content: space-around;
+      align-items: center;
+      padding-top: 10px;
+      height: 100%;
+      width: 650px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
     }
   }
   .HomeBackground{
@@ -119,9 +155,9 @@
 #icon{
   cursor: pointer;
   border-radius: 100%;
-  width: 130px
+  width: 85px
 }
-@media (max-width: 900px){
+@media (max-width: 800px){
   .MusicButton{
     position: fixed;
     right: 5px;
@@ -133,6 +169,6 @@
   #icon{
     cursor: pointer;
     border-radius: 100%;
-    width: 80px
+    width: 60px
   }
 }
