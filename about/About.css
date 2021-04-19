@@ -67,6 +67,8 @@ nav a:hover {
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
+  width: 90px;
+  justify-content: center;
 }
 span{
   color: white;
@@ -130,7 +132,7 @@ span{
     align-items: center;
     padding-top: 10px;
     height: 100%;
-    width: 650px;
+    width: 900px;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
